@@ -1,0 +1,437 @@
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif ; 
+    color: #1f2937;
+    background-color: #f9fafb;
+    line-height: 1.6;
+}
+
+    body::before {
+    content: "";
+    position: fixed;            /* Stays centered even while scrolling */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px;               /* Size of the watermark */
+    height: 500px;
+    background-image: url('images/logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.35;              /* Very subtle (6% opacity) so text stays clear */
+    pointer-events: none;       /* Allows you to click buttons right through it */
+    z-index: -1;                /* Keeps it behind all your text and cards */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;  /* Logo on Left, Links on right */
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    position: sticky; /* Stays at top when scrolling */
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo container */
+/* Logo container */
+.logo {
+    display: flex;
+    flex-direction: row; /* Places image and text side-by-side */
+    align-items: center;
+    gap: 12px;           /* Space between logo and text */
+}
+/* Size and shape of the logo */
+.logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;  /* Makes it a neat circle */
+}
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+.logo h2 {
+    font-size: 1.3rem;
+    color: #1e3a8a; /* Deep navy blue */
+    line-height: 1.2;
+}
+
+.logo span {
+    font-size: 0.8rem;
+    color: #d97706; /*  Golden Warm amber */
+    font-weight: 600;
+}
+
+/* Navigation Links (Home, About, Services, Contact) */
+nav ul {
+    display: flex;
+    list-style: none; /* Removes the bullet points */
+    gap: 20px;        /* Space between links */
+}
+
+nav a {
+    text-decoration: none; /* Removes underline */
+    color: #374151;
+    font-weight: 600;
+    font-size: 0.95rem; 
+    transition: color 0.2s ease; /* Smooth color transition on hover */
+}
+
+/*Hover effect on links */
+nav a:hover {
+    color: #2563eb; /* Bright blue when cursor is over it */
+}
+
+/* Hide mobile hamburger button on dekstop screens */
+.menu-bit, .menu-btn {
+    display: none;
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #1e3a8a;
+}
+
+.hero, #hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 20px;
+}
+.hero h1, #hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+.hero p, #hero p {
+    font-size: 1.15rem;
+    max-width: 650px;
+    margin: 0 auto 30px auto; /* Centers the paragraph */
+    opacity: 0.9;
+}
+/* Button Group */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+/* Base Button Style */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+/* Primary Button (Golden Amber) */
+.btn:first-child {
+    background-color: #f59e0b;
+    color: #ffffff;
+}
+.btn:first-child:hover {
+    background-color: #d97706;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+/* Secondary Button (Outline) */
+.btn:last-child {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+.btn:last-child:hover {
+    background-color: #ffffff;
+    color: #1e3a8a;
+    transform: translateY(-2px);
+}
+/* =========================================
+   4. ABOUT SECTION
+   ========================================= */
+.about {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.about h2 {
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+.about p {
+    font-size: 1.1rem;
+    color: #4b5563;
+    line-height: 1.8;
+}
+
+.classes {
+    padding: 60px 5%;
+max-width: 1200px;
+margin: 0 auto;
+text-align: center;
+}
+
+.classes h2 {
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 40px;
+}
+/* 3-Card Responsive Grid */
+.card-grid, .card-grip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+/* Individual Card */
+.card {
+    background-color: #ffffff;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border-top: 4px solid #2563eb; /* Blue accent bar on top */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.card h3 {
+    color: #1e3a8a;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+.card p {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+.card ul li {
+    padding: 6px 0;
+    color: #374151;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 20px;
+}
+/* Green Checkmark before each subject */
+.card ul li::before {
+    content: "✔";
+    color: #10b981;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+/* =========================================
+   6. SUBJECTS HIGHLIGHT
+   ========================================= */
+.subjects {
+    background-color: #f3f4f6;
+    padding: 50px 20px;
+    text-align: center;
+}
+.subjects h2 {
+    font-size: 1.8rem;
+    color: #1e3a8a;
+    margin-bottom: 25px;
+}
+/* Badges / Pill Tags */
+.subjects-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.subjects-tags span {
+    background-color: #ffffff;
+    color: #1e3a8a;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 22px;
+    border-radius: 50px; /* Pill shape */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+}
+/* =========================================
+   7. WHY CHOOSE US
+   ========================================= */
+.why-choose-us {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.why-choose-us h2 {
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 40px;
+}
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+.feature-item, .feature-items {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #f59e0b; /* Amber left accent */
+}
+.feature-item h3, .feature-items h3 {
+    color: #1e3a8a;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.feature-item p, .feature-items p {
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+/* =========================================
+   8. FAQ (ACCORDION DROPDOWNS)
+   ========================================= */
+.faq {
+    background-color: #f3f4f6;
+    padding: 60px 20px;
+}
+.faq h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 30px;
+}
+.faq details {
+    max-width: 750px;
+    margin: 0 auto 15px auto;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+.faq summary {
+    font-weight: 600;
+    color: #1e3a8a;
+    font-size: 1.05rem;
+    outline: none;
+}
+.faq p {
+    margin-top: 12px;
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+/* =========================================
+   9. CONTACT INFO & ADMISSION FORM
+   ========================================= */
+.info-box, .contact {
+    padding: 60px 5%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.info-box h2, .contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 25px;
+}
+/* Form Styling */
+form {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+form label {
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.95rem;
+}
+form input, form select {
+    padding: 12px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+form input:focus, form select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+form button {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    padding: 14px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+}
+form button:hover {
+    background-color: #2563eb;
+}
+/* =========================================
+   10. FOOTER
+   ========================================= */
+footer {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 50px;
+    font-size: 0.95rem;
+}
+/* =========================================
+   11. MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+    /* Show the hamburger icon on phones */
+    .menu-bit, .menu-btn {
+        display: block;
+    }
+    /* Hide the navbar links by default on phones */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        gap: 15px;
+    }
+    /* JavaScript will toggle this class to show/hide the menu */
+    nav ul.show {
+        display: flex;
+    }
+}
