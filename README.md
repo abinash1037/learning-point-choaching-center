@@ -6,18 +6,6 @@ This website provides information about batches and subjects, answers frequently
 
 ---
 
-## 📖 What is a README?
-
-A **README** (literally *"Read Me"*) is the instruction manual and homepage of a software project. Whenever you create a project in VS Code or upload it to GitHub, the README file (`README.md`):
-- Explains **what** the project is.
-- Details **what features** are included.
-- Shows **how to run and use** the project.
-- Acts as a reference for you and anyone else reviewing your work.
-
-The `.md` extension stands for **Markdown**, a simple formatting system that supports headings, bold text, lists, links, and code blocks.
-
----
-
 ## ✨ Key Features
 
 1. **📱 Responsive Design**: Works seamlessly on mobile phones, tablets, and desktop computers with a clean hamburger navigation menu.
